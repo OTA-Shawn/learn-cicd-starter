@@ -5,6 +5,12 @@ on:
     branched: [main]
 
 jobs:
+  # job_id:
+  #   # Add "id-token" with the intended permissions.
+  #   permissions:
+  #     contents: "read"
+  #     id-token: "write"
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -19,13 +25,6 @@ jobs:
       - name: build
         run: scripts/buildprod.sh
 
-  job_id:
-    # Add "id-token" with the intended permissions.
-    permissions:
-      contents: "read"
-      id-token: "write"
-
-    steps:
       - id: "auth"
         uses: "google-github-actions/auth@v2"
         with:
