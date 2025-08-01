@@ -6,6 +6,9 @@ on:
 
 jobs:
   job_id:
+    name: Gcloud Authentication
+    runs-on: ubuntu-latest
+
     steps:
       - id: "auth"
         uses: "google-github-actions/auth@v2"
